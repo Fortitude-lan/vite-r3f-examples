@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+#root {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* background-color: ivory; */
+}
+
+.label > div {
+  position: absolute;
+  background-color: #00000088;
+  color: white;
+  padding: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 30px;
+  user-select: none;
+}
