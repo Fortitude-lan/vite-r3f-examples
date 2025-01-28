@@ -232,7 +232,7 @@ export default function R3fBasicExam({ orbitControls }) {
           color="greenyellow"
         /> */}
         </mesh>
-      ) }
+      )}
 
       {/* 5.text float */}
 

@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
 import * as THREE from "three";
-import { Leva } from "leva";
+import { Leva, useControls } from "leva";
 
 import TextureExam from "./examples/textureExam";
 import MaterialExam from "./examples/MaterialExam";
@@ -34,22 +34,43 @@ export default function App() {
     SphereGame: false,
     PhysicsExam: false,
   };
-
+  const {
+    boo_TextureExam,
+    boo_MaterialExam,
+    // boo_Text3dExam,
+    boo_R3fBasicExam,
+    boo_LoadModelExam,
+    boo_ScrollCtrl,
+    boo_Shadermaterials,
+    boo_PhysicsExam,
+    // boo_Shader,
+  } = useControls('All', {
+    boo_TextureExam: true,
+    boo_MaterialExam: false,
+    // boo_Text3dExam: true,
+    boo_R3fBasicExam: false,
+    boo_LoadModelExam: false,
+    boo_ScrollCtrl: false,
+    boo_Shadermaterials: false,
+    // boo_Shader: false,
+    boo_PhysicsExam:false
+  });
   return (
     <>
       <Leva collapsed />
 
       {/* <KeyboardModel orbitControls={true} /> */}
       <Canvas shadows={true} dpr={[1, 2]} onCreated={created}>
-        {allExamples.TextureExam && <TextureExam orbitControls={true} />}
-        {allExamples.MaterialExam && <MaterialExam orbitControls={true} />}
-        {allExamples.Text3dExam && <Text3dExam orbitControls={true} />}
-        {allExamples.R3fBasicExam && <R3fBasicExam orbitControls={true} />}
-        {allExamples.LoadModelExam && <LoadModelExam orbitControls={true} />}
-        {allExamples.ScrollCtrl && <ScrollCtrl />}
-        {allExamples.Shadermaterials && <Shadermaterials />}
-        {allExamples.Shadermaterials && <SphereGame orbitControls={true} />}
-        {allExamples.PhysicsExam && <PhysicsExam orbitControls={true} />}
+
+        {boo_TextureExam && <TextureExam orbitControls={true} />}
+        {boo_MaterialExam && <MaterialExam orbitControls={true} />}
+        {/* {boo_Text3dExam && <Text3dExam orbitControls={true} />} */}
+        {boo_R3fBasicExam && <R3fBasicExam orbitControls={true} />}
+        {boo_LoadModelExam && <LoadModelExam orbitControls={true} />}
+        {boo_ScrollCtrl && <ScrollCtrl />}
+        {boo_Shadermaterials && <Shadermaterials />}
+        {/* {boo_Shader && <SphereGame orbitControls={true} />} */}
+        {boo_PhysicsExam && <PhysicsExam orbitControls={true} />}
       </Canvas>
     </>
   );

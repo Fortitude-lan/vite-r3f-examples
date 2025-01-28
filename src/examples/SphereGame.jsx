@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 1.0
+ * @Author: Hesin
+ * @Date: 2023-12-28 10:52:06
+ * @LastEditors: Hesin
+ * @LastEditTime: 2025-01-28 21:04:10
+ */
 import React, { useRef } from "react";
 import { OrbitControls, Plane, Sphere } from "@react-three/drei";
 import { a } from "@react-spring/three";
@@ -28,7 +36,7 @@ export default function SphereGame({ orbitControls }) {
         <meshStandardMaterial color="red" />
       </a.mesh>
       {/* Keyboard controls */}
-      {/* <mesh
+      <mesh
         onWheel={(e) => {
             console.log(e)
           // Adjust sphere position based on scroll direction
@@ -70,7 +78,7 @@ export default function SphereGame({ orbitControls }) {
               break;
           }
         }}
-      /> */}
+      />
     </>
   );
 }

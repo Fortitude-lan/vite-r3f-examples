@@ -3,7 +3,7 @@
 import { useFrame, extend } from "@react-three/fiber";
 import { useControls } from "leva";
 import React, { Suspense, useState, useMemo, useRef } from "react";
-import { OrbitControls,useMatcapTexture, Center, Text3D, Stage } from "@react-three/drei";
+import { OrbitControls, useMatcapTexture, Center, Text3D, Stage } from "@react-three/drei";
 extend({ Text3D });
 
 export default function Text3dExam({ orbitControls }) {
@@ -52,7 +52,7 @@ export default function Text3dExam({ orbitControls }) {
     }
   });
   return (
-    <>
+    <group>
       {orbitControls ? <OrbitControls makeDefault autoRotate={false} /> : null}
       {/* <ambientLight intensity={materialProps.ambIntensity} /> */}
       {/* <pointLight position={[10, 10, 10]} color="#Fff" /> */}
@@ -97,7 +97,6 @@ export default function Text3dExam({ orbitControls }) {
           rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}
         />
       ))}
-      {/* </group> */}
-    </>
+    </group>
   );
 }
